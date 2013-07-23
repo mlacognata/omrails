@@ -7,11 +7,13 @@ $btnPrimaryBackground: black;
 $navbarBackgroundHighlight: white;
 $navbarBackground: silver;
 
+
 @import 'bootstrap';
 body {
 		padding-top: 60px;
 }
 @import 'bootstrap-responsive';
+
 
 .navbar-inner {
 	@include box-shadow(none !important);
