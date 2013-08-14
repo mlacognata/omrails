@@ -4,7 +4,7 @@ class PinsController < ApplicationController
   # GET /pins
   # GET /pins.json
   def index
-    @pins = Pin.all
+    @pins = Pin.order("created_at desc")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -80,6 +80,11 @@ class PinsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to pins_url }
       format.json { head :no_content }
+  
     end
   end
 end
+
+def pin_params
+   params.require(:pin).permit(:description, :image)
+end   
